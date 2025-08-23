@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af630d4-ae82-4414-a02d-d70bff3c496e" name="Changes" comment="jdbc" />
+    <list default="true" id="6af630d4-ae82-4414-a02d-d70bff3c496e" name="Changes" comment="jdbc">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +67,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Лимон\IdeaProjects\PP_1_1_3-4_JDBC_Hibernat\" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TaskJDBC" />
@@ -150,7 +158,7 @@
       <workItem from="1755892487531" duration="8433000" />
       <workItem from="1755937528946" duration="2203000" />
       <workItem from="1755947038934" duration="96000" />
-      <workItem from="1755947157740" duration="1548000" />
+      <workItem from="1755947157740" duration="3434000" />
     </task>
     <task id="LOCAL-00001" summary="jdbc">
       <option name="closed" value="true" />
