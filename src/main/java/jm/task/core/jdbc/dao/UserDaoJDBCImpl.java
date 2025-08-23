@@ -16,7 +16,7 @@ public class UserDaoJDBCImpl implements UserDao {
             "id INT PRIMARY KEY AUTO_INCREMENT," +
             "name VARCHAR(20)," +
             "lastName VARCHAR(20)," +
-            "age INT" +  // <-- Убрана запятая и исправлен тип
+            "age INT" +
             ")";
     try (Connection connection = Util.getConnection();
          Statement statement = connection.createStatement()) {
