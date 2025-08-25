@@ -1,8 +1,6 @@
 package jm.task.core.jdbc.dao;
-
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-  String sql = "CREATE TABLE IF NOT EXISTS user (" +  // <-- Добавлена открывающая скобка
+  String sql = "CREATE TABLE IF NOT EXISTS user (" +
             "id INT PRIMARY KEY AUTO_INCREMENT," +
             "name VARCHAR(20)," +
             "lastName VARCHAR(20)," +
@@ -46,7 +44,6 @@ public class UserDaoJDBCImpl implements UserDao {
             prepareStatement.setString(2, lastName);
             prepareStatement.setByte(3, age);
             prepareStatement.executeUpdate();
-            System.out.printf("Пользователь добавлен: name = %s, lastName = %s, age = %d%n", name, lastName, age);
         } catch (SQLException e) {
             throw new RuntimeException("Не удалось сохранить пользователя: " + e.getMessage(), e);
         }
@@ -74,8 +71,7 @@ public class UserDaoJDBCImpl implements UserDao {
         ) {
 
             while (resultSet.next()) {
-                User user = new User(resultSet.getLong("id"), resultSet.getString("name"), resultSet.getString("lastName"), resultSet.getByte("age"));
-                user.setId(resultSet.getLong("id"));
+                User user = new User( resultSet.getString("name"), resultSet.getString("lastName"), resultSet.getByte("age"));
                 user.setName(resultSet.getString("name"));
                 user.setLastName(resultSet.getString("lastName"));
                 user.setAge(resultSet.getByte("age"));
