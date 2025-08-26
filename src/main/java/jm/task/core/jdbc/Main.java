@@ -1,27 +1,35 @@
 package jm.task.core.jdbc;
-import jm.task.core.jdbc.dao.UserDao;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.util.Util;
 
+import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.service.UserService;
+import jm.task.core.jdbc.service.UserServiceImpl;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Util.getConnection();
-        UserDao userDao = new UserDaoJDBCImpl();
+        UserService userService = new UserServiceImpl();
 
-        userDao.createUsersTable();
-        System.out.println("Таблица создана");
+        userService.createUsersTable();
+        System.out.println("Таблица пользователей создана.");
 
-        userDao.saveUser("Name1", "LastName1", (byte) 20);
-        userDao.saveUser("Name2", "LastName2", (byte) 25);
-        userDao.saveUser("Name3", "LastName3", (byte) 31);
-        userDao.saveUser("Name4", "LastName4", (byte) 38);
 
-        userDao.removeUserById(1);
-        List<User> list = userDao.getAllUsers();
-        System.out.println("List Юзеры в бд " + list.toString());
-        userDao.cleanUsersTable();
+        userService.saveUser("Роман", "Иванов", (byte) 25);
+        System.out.println("User с именем Иван добавлен в базу данных.");
+        userService.saveUser("Максим", "Петров", (byte) 33);
+        System.out.println("User с именем Пётр добавлен в базу данных.");
+        userService.saveUser("Владимир", "Сидоров", (byte) 40);
+        System.out.println("User с именем Сидор добавлен в базу данных.");
+        userService.saveUser("Анна", "Кузнецова", (byte) 23);
+        System.out.println("User с именем Анна добавлена в базу данных.");
+
+        List<User> users = userService.getAllUsers();
+        System.out.println("Список пользователей в базе данных:");
+        users.forEach(System.out::println);
+
+        userService.cleanUsersTable();
+        System.out.println("Таблица пользователей очищена.");
+
+        userService.dropUsersTable();
+        System.out.println("Таблица пользователей удалена.");
     }
 }

@@ -40,7 +40,6 @@ public class Util {
                 properties.put(Environment.PASS, "root");
                 properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
                 properties.put(Environment.SHOW_SQL, "true");
-                properties.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(properties);
                 configuration.addAnnotatedClass(User.class);
